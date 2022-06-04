@@ -12,6 +12,7 @@ body {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 
+    color: var(--textColour);
     background-color: var(--systemGroupedBackgroundColour);
     overflow: hidden; /* Need this to prevent scrolling of tabbar, even with position:fixed, however it means that I have to manually add overflow:auto everytime there is going to be an overflow */
 
@@ -20,17 +21,29 @@ body {
     --tabBarHeight: 60px;
 
     /* Variables */
+    --textColour: rgb(0, 0, 0);
+    --secondaryTextColour: rgb(50, 50, 50);
     --linkColour: rgb(10, 132, 255);
     --systemBackgroundColour: rgb(255, 255, 255);
-    --systemGroupedBackgroundColour: rgb(250, 250, 250);
+    --systemGroupedBackgroundColour: rgb(247, 247, 247);
+    --systemHighlightBackgroundColour: rgb(225, 225, 225);
     --systemBorder: 1px solid rgb(225, 225, 225);
 
     --defaultTitleSize: large;
     --defaultTextSize: medium;
+
+    --tableviewHeaderFooterFontSize: small;
+    --defaultTableviewCellHeight: 43px;
+    --defaultTableviewSectionGap: 50px;
+
+    --collectionviewHeaderFooterFontSize: small;
+    --defaultCollectionviewSectionGap: 50px;
+    --defaultCollectionViewCellSize: 100px;
+    --defaultCollectionViewCellGap: 10px;
 }
 
 
-navigation-bar {
+.navigation-bar {
     height: var(--navigationBarHeight);
     position: fixed;
     top: 0;
@@ -44,13 +57,13 @@ navigation-bar {
     border-bottom: var(--systemBorder);
     z-index: 1;
 }
-navigation-bar > label {
+.navigation-bar > label {
     font-size: var(--defaultTitleSize);
     font-weight: bold;
 }
 
 
-tab-bar {
+.tab-bar {
     height: var(--tabBarHeight);
     position: fixed;
     bottom: 0;
@@ -65,7 +78,7 @@ tab-bar {
     border-top: var(--systemBorder);
     z-index: 1;
 }
-tab-bar > item {
+.tab-bar > .item {
     height: 90%;
     width: 50px;
 
@@ -74,33 +87,36 @@ tab-bar > item {
     grid-template-rows: 70% 30%;
     place-items: center;
 }
-tab-bar > item > img {
+.tab-bar > .item > img {
     height: 60%;
     width: 60%;
 
-    object-fit:contain;
+    object-fit: contain;
 }
-tab-bar > item > label {
+.tab-bar > .item > label {
     font-size: x-small;
     white-space: nowrap;
 }
 
 
-main {
+.main {
     position: fixed;
     top: var(--navigationBarHeight);
     left: 0;
     right: 0;
     bottom: var(--tabBarHeight);
-    padding: 10px;
+
+    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: auto;
 
     background-color: var(--systemBackgroundColour);
 }
 
 
-button {
-    height: max-content;
-    width: max-content;
+.button {
+    padding: 0;
 
     font-size: var(--defaultTextSize);
     color: var(--linkColour);
@@ -111,6 +127,112 @@ button {
     -webkit-tap-highlight-color: transparent;
 
 }
-button:active {
+.button:active {
     opacity: 50%;
+}
+
+
+.textfield {
+    padding: 10px;
+
+    font-size: var(--defaultTextSize);
+    color: var(--textColour);
+
+    border: var(--systemBorder);
+    background-color: var(--systemGroupedBackgroundColour);
+}
+.textfield:focus {
+    outline: none;
+}
+
+label {
+    font-size: var(--defaultTextSize);
+}
+
+
+.tableview {
+    height: max-content;
+    width: 100%;
+
+    background-color: var(--systemGroupedBackgroundColour);
+    overflow: auto;
+}
+.tableview > .section {
+    height: max-content;
+    width: 100%;
+    padding-bottom: var(--defaultTableviewSectionGap);
+}
+.tableview > .section > header, 
+.tableview > .section > footer {
+    height: max-content;
+    width: 100%;
+
+    color: var(--secondaryTextColour);
+    font-size: var(--tableviewHeaderFooterFontSize);
+}
+.tableview > .section > .row { /*This is just a default div, the developer should be able to customise this if needed */
+    height: var(--defaultTableviewCellHeight);
+    width: 100%;
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    padding: 5px;
+
+    display: flex;
+    align-items: center;
+
+    border-top: var(--systemBorder);
+    background-color: var(--systemBackgroundColour);
+    transition: 100ms background-color;
+}
+.tableview > .section > .row:active {
+    background-color: var(--systemHighlightBackgroundColour);
+}
+.tableview > .section > .row:last-of-type {
+    border-bottom: var(--systemBorder);
+}
+
+
+.collectionview {
+    height: max-content;
+    width: 100%;
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    padding-top: var(--defaultCollectionViewCellGap);
+    padding-left: var(--defaultCollectionViewCellGap);
+
+    background-color: var(--systemGroupedBackgroundColour);
+    overflow: auto;
+}
+.collectionview > .section {
+    height: max-content;
+    width: 100%;
+    padding-bottom: var(--defaultCollectionviewSectionGap);
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--defaultCollectionViewCellSize));
+    grid-template-rows: repeat(auto-fill, var(--defaultCollectionViewCellSize));;
+    gap: var(--defaultCollectionViewCellGap);
+}
+.collectionview > .section > .cell { /* Default cell, can be overwritten by developer */
+    height: var(--defaultCollectionViewCellSize);
+    width: var(--defaultCollectionViewCellSize);
+
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    padding: 5px;
+
+    display: grid;
+    place-content: center;
+
+    border-radius: 10%;
+    background-color: var(--systemBackgroundColour);
+    transition: 100ms background-color;
+}
+.collectionview > .section > .cell:active {
+    background-color: var(--systemHighlightBackgroundColour);
 }

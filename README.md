@@ -1,47 +1,99 @@
 # Native
 ## A small framework which gives you the tools to build websites which look exactly like a Native iOS app.
 
-## How it works
-Basic idea so I'm not sure if this will actually work:
-- Developer writes their code in their HTML file, with special elements such as:
+Just import Native, write your HTML using Native HTML and CSS, and you can create a web application which will look almost identical to a native iOS app.
+
+## Setup
+Just import Native's [CSS Stylesheet](Src/native.css)
 ```html
-<navigation-bar
-    data-title="Test Navigation Bar"
-></navigation-bar>
+<link rel="stylesheet" href="native.css">
 ```
 
-- At the end of their file, the *native.css* and *native.js* files are called:
+Also make sure to add an ontouchstart to the body, to fix the iOS safari bug where the :active pseudo class doesn't work properly:
 ```html
-<link rel="stylesheet" href="/Src/native.css">
-<script src="/_JS/Src/native.js" defer></script>
+<body ontouchstart>
+</body>
 ```
 
-- Native will contain a lot of templates for different objects (navigation bar, tab bar, buttons, etc...), and the JS will go through the developer's HTML, and replace all instances of a special tag such as <navigation-bar>, with the actual template for that object.
-    - For example this could be what the Navigation Bar template looks like:
-    ```html
-    <div id="navigation-bar">
-        <label id="navigation-bar-title"></label>
+## Page Layout
+Once you have import Native, you can create elements using special Native classes, and then just handle all events using JS as usual. This is only meant to be a CSS framework.
+
+A Native view must have a Navigation bar, a Main section, and a Tab bar. So format your HTML body like this:
+```html
+<div class="navigation-bar">
+    <label>Welcome to Native</label>
+</div>
+
+<div class="main">
+    <!-- Main content goes here  -->
+</div>
+
+<div class="tab-bar">
+    <div class="item">
+        <img src="pencil.svg" alt="Pencil"> <!-- You will need to download glyphs, you can get them from Apple's SF Symbols -->
+        <label>Pencil Path</label>
     </div>
-    ```
 
-    ```css
-    #navigation-bar {
-        height: 60px;
-        width: 100%;
+    <div class="item">
+        <img src="book.svg" alt="Book">
+        <label>Book Path</label>
+    </div>
+</div>
+```
 
-        display: grid;
-        place-content: center;
+## Elements
+After this, you can begin to customize the main section using the elements.
 
-        font-size: large;
-        font-weight: bold;
-        background-color: var(--systemBackgroundColour);
-        border-bottom: 1px solid var(--systemBorderColour);
-    }
-    ```
+### Button
+```html
+<button class="button">Click Me</button>
+```
 
-- The JS will modify the template, to inject the data such as title into it, and then just replace the <navigation-bar> tag in the developer's HTML with the modifyed template.
+### Textfield
+```html
+<input type="text" class="textfield" placeholder="Textfield">
+```
+
+### Label
+```html
+<label>A Label</label> <!-- Basically the same as HTML -->
+```
 
 
+### Tableview
+```html
+<div class="tableview">
+    <div class="section">
+        <header>Section 1 header</header>
+        <div class="row">Row 1</div>
+        <div class="row">Row 2</div>
+        <div class="row">Row 3</div>
+        <footer>Section 1 footer</footer>
+    </div>
 
-# I think a better solution to this would be to look at Bootstrap, and give each object a specific CSS style. Then the user can just use regular divs, and give them a specific class that they want. It would reduce the complexity drastically.
-## Ignore above
+    <div class="section">
+        <header>Section 2 header</header>
+        <div class="row">Row 1</div>
+        <div class="row">Row 2</div>
+        <footer>Section 2 footer</footer>
+    </div>
+</div>
+```
+
+### Collectionview
+```html
+<div class="collectionview">
+    <div class="section"> <!-- No headers or footers for collectionviews-->
+        <div class="cell">Cell 1</div>
+        <div class="cell">Cell 2</div>
+    </div>
+
+    <div class="section">
+        <div class="cell">Cell 1</div>
+        <div class="cell">Cell 2</div>
+        <div class="cell">Cell 3</div>
+        <div class="cell">Cell 4</div>
+        <div class="cell">Cell 5</div>
+    </div>
+</div>
+```

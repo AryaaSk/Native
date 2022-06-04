@@ -9,27 +9,95 @@
 
     <link rel="stylesheet" href="/Src/native.css">
 </head>
-<body ontouchstart="">
+<body ontouchstart>
 
-    <navigation-bar>
+    <!-- All wrappers/containers, are of type div with their specified class name -->
+    <!-- However once you are inside the container, the elements (e.g. labels, buttons, etc...) do not need specific classes -->
+    <!-- Elements: Navigation Bar, Tab Bar, Button, Textfield, Label, Tableview, CollectionView -->
+
+    <div class="navigation-bar">
         <label>Welcome to Native</label>
-    </navigation-bar>
+    </div>
 
-    <main>
-        <button>Click Me</button>
-    </main>
+    <div class="main">
+        <button class="button">Click Me</button>
+        <br> <br>
 
-    <tab-bar>
-        <item>
+
+        <input type="text" class="textfield" placeholder="Textfield">
+        <br> <br>
+
+
+        <label>A Label</label>
+        <br> <br>
+
+
+        <div class="tableview">
+            <div class="section">
+                <header>Section 1 header</header>
+                <div class="row">Row 1</div>
+                <div class="row">Row 2</div>
+                <div class="row">Row 3</div>
+                <footer>Section 1 footer</footer>
+            </div>
+
+            <div class="section">
+                <header>Section 2 header</header>
+                <div class="row">Row 1</div>
+                <div class="row">Row 2</div>
+                <footer>Section 2 footer</footer>
+            </div>
+
+            <div class="section">
+                <header>Section 3 header</header>
+                <div class="row">Row 1</div>
+                <div class="row">Row 2</div>
+                <div class="row">Row 3</div>
+                <div class="row">Row 4</div>
+                <footer>Section 3 footer</footer>
+            </div>
+
+            <div class="section">
+                <header>Section 4 header</header>
+                <div class="row">Row 1</div>
+                <div class="row">Row 2</div>
+                <div class="row">Row 3</div>
+                <div class="row">Row 4</div>
+                <div class="row">Row 5</div>
+                <footer>Section 4 footer</footer>
+            </div>
+        </div>
+        <br> <br>
+
+
+        <div class="collectionview">
+            <div class="section"> <!-- No headers or footers for collectionviews-->
+                <div class="cell">Cell 1</div>
+                <div class="cell">Cell 2</div>
+            </div>
+
+            <div class="section">
+                <div class="cell">Cell 1</div>
+                <div class="cell">Cell 2</div>
+                <div class="cell">Cell 3</div>
+                <div class="cell">Cell 4</div>
+                <div class="cell">Cell 5</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="tab-bar">
+        <div class="item">
             <img src="pencil.svg" alt="Icon">
             <label>Pencil Path</label>
-        </item>
+        </div>
 
-        <item>
+        <div class="item">
             <img src="book.svg" alt="Icon">
             <label>Book Path</label>
-        </item>
-    </tab-bar>
+        </div>
+    </div>
 
 </body>
 </html>
