@@ -15,15 +15,17 @@ body {
     color: var(--textColour);
     background-color: var(--systemGroupedBackgroundColour);
     overflow: hidden; /* Need this to prevent scrolling of tabbar, even with position:fixed, however it means that I have to manually add overflow:auto everytime there is going to be an overflow */
+    -webkit-tap-highlight-color: transparent;
 
     /* Constants */
     --navigationBarHeight: 50px;
-    --tabBarHeight: 60px;
+    --tabBarHeight: 50px;
     --elementSideMargin: 5px;
 
     /* Variables */
     --textColour: rgb(0, 0, 0);
-    --secondaryTextColour: rgb(50, 50, 50);
+    --secondaryTextColour: rgb(135, 135, 135);
+    --tertiaryTextColour: rgb(50, 50, 50);
     --linkColour: rgb(10, 132, 255);
     --systemBackgroundColour: rgb(255, 255, 255);
     --systemGroupedBackgroundColour: rgb(247, 247, 247);
@@ -102,13 +104,15 @@ body {
     grid-template-rows: 70% 30%;
     place-items: center;
 }
-.tab-bar > .item > img {
-    height: 60%;
-    width: 60%;
+.tab-bar > .item > img,
+.tab-bar > .item > svg {
+    height: 70%;
+    width: 70%;
 
     object-fit: contain;
 }
 .tab-bar > .item > label {
+    color: var(--secondaryTextColour);
     font-size: x-small;
     white-space: nowrap;
 }
@@ -141,7 +145,6 @@ body {
 
     border: none;
     background-color: transparent;
-    -webkit-tap-highlight-color: transparent;
 
 }
 .button:active {
@@ -194,7 +197,7 @@ label {
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
 
-    color: var(--secondaryTextColour);
+    color: var(--tertiaryTextColour);
     font-size: var(--tableviewHeaderFooterFontSize);
 }
 .tableview > .section > .row { /*This is just a default div, the developer should be able to customise this if needed */

@@ -23,10 +23,11 @@ A Native view must have a Navigation bar, a Main section, and optionally a Tab b
 Format your HTML body like this:
 ```html
 <div class="navigation-bar">
-        <div class="leftButtons"></div>
-        <label>Welcome to Native</label>
-        <div class="rightButtons"></div>
-    </div>
+    <div class="leftButtons"></div>
+    <label>Welcome to Native</label>
+    <div class="rightButtons"></div>
+</div>
+
 <div class="main">
     <!-- Main content goes here  -->
 </div>

@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folder</title>
+    
+    <script src="/Src/native.js"></script>
+    <link rel="stylesheet" href="/Src/native.css">
+
+    <script src="folder.js" defer></script>
+
+    <style>
+        .main {
+            display: grid;
+            place-content: center;
+        }
+
+        img {
+            height: 250px; /* Image sizes seem to work differently between platforms, on iOS I set the image to 300x300, but it was a lot smaller than in HTML*/
+            width: 250px;
+        }
+    </style>
+</head>
+<body ontouchstart>
+
+    <div class="navigation-bar">
+        <div class="leftButtons"></div>
+        <label>Folder</label>
+        <div class="rightButtons"></div>
+    </div>
+    
+    <div class="main">
+        <img class="imageView" src="/Comparison/Assets/folder.svg" alt="Folder">
+    </div>
+
+    <div class="tab-bar"></div>
+
+</body>
+</html>
