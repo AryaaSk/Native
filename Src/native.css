@@ -42,6 +42,9 @@ body {
     --defaultCollectionViewCellSize: 100px;
     --defaultCollectionViewCellGap: 10px;
 }
+.noTabBar {
+    --tabBarHeight: 0px;
+}
 
 
 .navigation-bar {

@@ -19,7 +19,8 @@ Also make sure to add an ontouchstart to the body, to fix the iOS safari bug whe
 ### Page Layout
 Once you have import Native, you can create elements using special Native classes, and then just handle all events using JS as usual. This is only meant to be a CSS framework.
 
-A Native view must have a Navigation bar, a Main section, and a Tab bar. So format your HTML body like this:
+A Native view must have a Navigation bar, a Main section, and optionally a Tab bar.\
+Format your HTML body like this:
 ```html
 <div class="navigation-bar">
         <div class="leftButtons"></div>
@@ -42,10 +43,15 @@ TAB_BAR_CONFIG = [
     { iconSrc: "pencil.svg", title: "Pencil", path: "pencil.html" },
 ];
 ```
-
 Then you can just call the InitTabBar() function:
 ```javascript
 InitTabBar();
+```
+
+If you do not want a tab bar, then you can add this tag into your body element:
+```html
+<body ontouchstart class="noTabBar">
+</body>
 ```
 
 ## Elements
