@@ -4,8 +4,9 @@
 Just import Native, write your HTML using Native HTML and CSS, and you can create a web application which will look almost identical to a native iOS app.
 
 ## Setup
-Just import Native's [CSS Stylesheet](Src/native.css)
+Just import Native's [CSS Stylesheet](Src/native.css) and [JS](Src/native.js)
 ```html
+<script src="native.js"></script> <!-- Import these before your own scripts -->
 <link rel="stylesheet" href="native.css">
 ```
 
@@ -15,7 +16,7 @@ Also make sure to add an ontouchstart to the body, to fix the iOS safari bug whe
 </body>
 ```
 
-## Page Layout
+### Page Layout
 Once you have import Native, you can create elements using special Native classes, and then just handle all events using JS as usual. This is only meant to be a CSS framework.
 
 A Native view must have a Navigation bar, a Main section, and a Tab bar. So format your HTML body like this:
@@ -30,16 +31,21 @@ A Native view must have a Navigation bar, a Main section, and a Tab bar. So form
 </div>
 
 <div class="tab-bar">
-    <div class="item">
-        <img src="pencil.svg" alt="Pencil"> <!-- You will need to download glyphs, you can get them from Apple's SF Symbols -->
-        <label>Pencil Path</label>
-    </div>
-
-    <div class="item">
-        <img src="book.svg" alt="Book">
-        <label>Book Path</label>
-    </div>
+    <!-- Tab bar is initalized with the use of JS (see below) -->
 </div>
+```
+
+To initalize the tab bar, first you need to specify the different items:
+```javascript
+TAB_BAR_CONFIG = [
+    { iconSrc: "book.svg", title: "Book", path: "book.html" }, //you will need to have these icons and html files stored locally
+    { iconSrc: "pencil.svg", title: "Pencil", path: "pencil.html" },
+];
+```
+
+Then you can just call the InitTabBar() function:
+```javascript
+InitTabBar();
 ```
 
 ## Elements

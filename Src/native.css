@@ -184,8 +184,12 @@ label {
 .tableview > .section > footer {
     height: max-content;
     width: 100%;
-    margin-left: var(--elementSideMargin);
-    margin-right: var(--elementSideMargin);
+
+    padding-left: var(--elementSideMargin);
+    padding-right: var(--elementSideMargin);
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
 
     color: var(--secondaryTextColour);
     font-size: var(--tableviewHeaderFooterFontSize);
@@ -194,10 +198,10 @@ label {
     height: var(--defaultTableviewCellHeight);
     width: 100%;
 
+    padding: 5px;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
-    padding: 5px;
 
     display: flex;
     align-items: center;
@@ -218,11 +222,11 @@ label {
     height: max-content;
     width: 100%;
 
+    padding-top: var(--defaultCollectionViewCellGap);
+    padding-left: var(--defaultCollectionViewCellGap);
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
-    padding-top: var(--defaultCollectionViewCellGap);
-    padding-left: var(--defaultCollectionViewCellGap);
 
     background-color: var(--systemGroupedBackgroundColour);
     overflow: auto;
@@ -241,10 +245,10 @@ label {
     height: var(--defaultCollectionViewCellSize);
     width: var(--defaultCollectionViewCellSize);
 
+    padding: 5px;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
-    padding: 5px;
 
     display: grid;
     place-content: center;

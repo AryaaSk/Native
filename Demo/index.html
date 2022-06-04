@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sandbox</title>
 
-    <script src="/_JS/script.js"></script>
-
+    <script src="/Src/native.js"></script> <!-- Import these before your own scripts -->
     <link rel="stylesheet" href="/Src/native.css">
 </head>
 <body ontouchstart>
@@ -91,17 +90,16 @@
 
     </div>
 
-    <div class="tab-bar">
-        <div class="item">
-            <img src="pencil.svg" alt="Icon">
-            <label>Pencil Path</label>
-        </div>
+    <div class="tab-bar"></div>
 
-        <div class="item">
-            <img src="book.svg" alt="Icon">
-            <label>Book Path</label>
-        </div>
-    </div>
+    <!-- Make sure to either defer the script or place it at the end of the HTML Body -->
+    <script>
+        TAB_BAR_CONFIG = [
+            { iconSrc: "book.svg", title: "Book", path: "book.html" }, //these paths don't actually exist, its just to show how it works
+            { iconSrc: "pencil.svg", title: "Pencil", path: "pencil.html" },
+        ];
+        InitTabBar();
+    </script>
 
 </body>
 </html>
