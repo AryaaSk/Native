@@ -19,6 +19,7 @@ body {
     /* Constants */
     --navigationBarHeight: 50px;
     --tabBarHeight: 60px;
+    --elementSideMargin: 5px;
 
     /* Variables */
     --textColour: rgb(0, 0, 0);
@@ -51,13 +52,24 @@ body {
     right: 0;
 
     display: grid;
-    place-content: center;
+    grid-template-columns: max-content auto max-content;
+    grid-template-rows: 100%;
+    place-items: center;
 
     background-color: var(--systemGroupedBackgroundColour);
     border-bottom: var(--systemBorder);
     z-index: 1;
 }
 .navigation-bar > label {
+    position: absolute; /* To make sure that title is always centered */
+    left: 50%;
+    top: 50%;
+    -moz-transform: translate(-50%, -50%); /* Firefox */
+    -ms-transform: translate(-50%, -50%);  /* IE 9 */
+    -webkit-transform: translate(-50%, -50%); /* Safari and Chrome*/
+    -o-transform: translate(-50%, -50%); /* Opera */
+    transform: translate(-50%, -50%);
+
     font-size: var(--defaultTitleSize);
     font-weight: bold;
 }
@@ -117,6 +129,8 @@ body {
 
 .button {
     padding: 0;
+    margin-left: var(--elementSideMargin);
+    margin-right: var(--elementSideMargin);
 
     font-size: var(--defaultTextSize);
     color: var(--linkColour);
@@ -134,6 +148,8 @@ body {
 
 .textfield {
     padding: 10px;
+    margin-left: var(--elementSideMargin);
+    margin-right: var(--elementSideMargin);
 
     font-size: var(--defaultTextSize);
     color: var(--textColour);
@@ -146,6 +162,8 @@ body {
 }
 
 label {
+    margin-left: var(--elementSideMargin);
+    margin-right: var(--elementSideMargin);
     font-size: var(--defaultTextSize);
 }
 
@@ -166,6 +184,8 @@ label {
 .tableview > .section > footer {
     height: max-content;
     width: 100%;
+    margin-left: var(--elementSideMargin);
+    margin-right: var(--elementSideMargin);
 
     color: var(--secondaryTextColour);
     font-size: var(--tableviewHeaderFooterFontSize);
