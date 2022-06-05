@@ -13,7 +13,7 @@ body {
                                   supported by Chrome, Edge, Opera and Firefox */
 
     color: var(--textColour);
-    background-color: var(--systemGroupedBackgroundColour);
+    background-color: var(--navigationTabBarBackgroundColour);
     overflow: hidden; /* Need this to prevent scrolling of tabbar, even with position:fixed, however it means that I have to manually add overflow:auto everytime there is going to be an overflow */
     -webkit-tap-highlight-color: transparent;
 
@@ -24,12 +24,14 @@ body {
 
     /* Variables */
     --textColour: rgb(0, 0, 0);
-    --secondaryTextColour: rgb(135, 135, 135);
-    --tertiaryTextColour: rgb(50, 50, 50);
+    --secondaryTextColour: rgb(50, 50, 50);
+    --tertiaryTextColour: rgb(135, 135, 135);
     --linkColour: rgb(10, 132, 255);
     --systemBackgroundColour: rgb(255, 255, 255);
     --systemGroupedBackgroundColour: rgb(247, 247, 247);
     --systemHighlightBackgroundColour: rgb(225, 225, 225);
+    --navigationTabBarBackgroundColour: rgb(247, 247, 247);
+    --systemObjectBackgroundColour: rgb(255, 255, 255);
     --systemBorder: 1px solid rgb(225, 225, 225);
 
     --defaultTitleSize: large;
@@ -61,9 +63,10 @@ body {
     grid-template-rows: 100%;
     place-items: center;
 
-    background-color: var(--systemGroupedBackgroundColour);
+    background-color: var(--navigationTabBarBackgroundColour);
     border-bottom: var(--systemBorder);
     z-index: 1;
+    touch-action: none;
 }
 .navigation-bar > label {
     position: absolute; /* To make sure that title is always centered */
@@ -91,9 +94,10 @@ body {
     align-items: center;
     justify-content: space-around;
 
-    background-color: var(--systemGroupedBackgroundColour);
+    background-color: var(--navigationTabBarBackgroundColour);
     border-top: var(--systemBorder);
     z-index: 1;
+    touch-action: none;
 }
 .tab-bar > .item {
     height: 90%;
@@ -112,7 +116,7 @@ body {
     object-fit: contain;
 }
 .tab-bar > .item > label {
-    color: var(--secondaryTextColour);
+    color: var(--tertiaryTextColour);
     font-size: x-small;
     white-space: nowrap;
 }
@@ -129,6 +133,7 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
     overflow: auto;
+    touch-action: pan-y;
 
     background-color: var(--systemBackgroundColour);
 }
@@ -153,6 +158,7 @@ body {
 
 
 .textfield {
+    height: 43px;
     padding: 10px;
     margin-left: var(--elementSideMargin);
     margin-right: var(--elementSideMargin);
@@ -161,7 +167,7 @@ body {
     color: var(--textColour);
 
     border: var(--systemBorder);
-    background-color: var(--systemGroupedBackgroundColour);
+    background-color: var(--systemObjectBackgroundColour);
 }
 .textfield:focus {
     outline: none;
@@ -191,13 +197,13 @@ body {
     height: max-content;
     width: 100%;
 
-    padding-left: var(--elementSideMargin);
+    padding-left: 12.9px;
     padding-right: var(--elementSideMargin);
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
 
-    color: var(--tertiaryTextColour);
+    color: var(--secondaryTextColour);
     font-size: var(--tableviewHeaderFooterFontSize);
 }
 .tableview > .section > .row { /*This is just a default div, the developer should be able to customise this if needed */
@@ -205,6 +211,7 @@ body {
     width: 100%;
 
     padding: 5px;
+    padding-left: 15px;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
@@ -213,7 +220,7 @@ body {
     align-items: center;
 
     border-top: var(--systemBorder);
-    background-color: var(--systemBackgroundColour);
+    background-color: var(--systemObjectBackgroundColour);
     transition: 100ms background-color;
 }
 .tableview > .section > .row:active {

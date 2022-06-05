@@ -8,6 +8,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+//Native is in light mode by default, to switch it to dark mode we just have to change a few of the colours
+const LoadDarkMode = () => {
+    const body = document.body;
+    body.style.setProperty('--textColour', '#ffffff');
+    body.style.setProperty('--secondaryTextColour', '#c4c4c4');
+    body.style.setProperty('--systemBackgroundColour', 'rgb(0, 0, 0)');
+    body.style.setProperty('--systemGroupedBackgroundColour', 'rgb(0, 0, 0)');
+    body.style.setProperty('--systemHighlightBackgroundColour', 'rgb(50, 50, 50)');
+    body.style.setProperty('--navigationTabBarBackgroundColour', 'rgb(18, 18, 18)');
+    body.style.setProperty('--systemObjectBackgroundColour', 'rgb(21, 21, 21)');
+    body.style.setProperty('--systemBorder', '1px solid rgb(25, 25, 25)');
+};
 let TAB_BAR_CONFIG = [];
 const InitTabBar = () => __awaiter(void 0, void 0, void 0, function* () {
     const currentPage = location.href.split("/").pop(); //find the current page which we are on to change the icon's colour
