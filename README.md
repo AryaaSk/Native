@@ -10,10 +10,15 @@ Just import Native's [CSS Stylesheet](Src/native.css) and [JS](Src/native.js)
 <link rel="stylesheet" href="native.css">
 ```
 
-Also make sure to add an ontouchstart to the body, to fix the iOS safari bug where the :active pseudo class doesn't work properly:
+Make sure to add an ontouchstart to the body, to fix the iOS safari bug where the :active pseudo class doesn't work properly:
 ```html
 <body ontouchstart>
 </body>
+```
+
+You will also want to add this tag into the head of your HTML to prevent the user from double-tapping and zooming in:
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 ```
 
 ### Page Layout

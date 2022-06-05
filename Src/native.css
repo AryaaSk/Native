@@ -18,27 +18,28 @@ body {
     -webkit-tap-highlight-color: transparent;
 
     /* Constants */
-    --navigationBarHeight: 50px;
+    --navigationBarHeight: 44px;
     --tabBarHeight: 50px;
     --elementSideMargin: 5px;
 
     /* Variables */
     --textColour: rgb(0, 0, 0);
-    --secondaryTextColour: rgb(50, 50, 50);
-    --tertiaryTextColour: rgb(135, 135, 135);
+    --secondaryTextColour: rgb(50, 50, 50); /* Used for headers and footers for tableviews and collectionviews */
+    --tertiaryTextColour: rgb(135, 135, 135); /* Used for the tab bar item's titles */
     --linkColour: rgb(10, 132, 255);
-    --systemBackgroundColour: rgb(255, 255, 255);
-    --systemGroupedBackgroundColour: rgb(247, 247, 247);
-    --systemHighlightBackgroundColour: rgb(225, 225, 225);
+
+    --systemBackgroundColour: rgb(255, 255, 255); /* Normal background colour */
+    --systemGroupedBackgroundColour: rgb(247, 247, 247); /* Used as the background colour of tableviews and collectionviews */
+    --systemHighlightBackgroundColour: rgb(225, 225, 225); /* Used when user is holding down a button */
     --navigationTabBarBackgroundColour: rgb(247, 247, 247);
-    --systemObjectBackgroundColour: rgb(255, 255, 255);
+    --systemObjectBackgroundColour: rgb(255, 255, 255); /* This is the background colour of most elements, e.g. textfield or button */
     --systemBorder: 1px solid rgb(225, 225, 225);
 
-    --defaultTitleSize: large;
-    --defaultTextSize: medium;
+    --defaultTitleSize: large; /* Navigation bar text */
+    --defaultTextSize: medium; /* Most other text */
 
     --tableviewHeaderFooterFontSize: small;
-    --defaultTableviewCellHeight: 43px;
+    --defaultTableviewCellHeight: 44px;
     --defaultTableviewSectionGap: 50px;
 
     --collectionviewHeaderFooterFontSize: small;
@@ -110,8 +111,8 @@ body {
 }
 .tab-bar > .item > img,
 .tab-bar > .item > svg {
-    height: 70%;
-    width: 70%;
+    height: 80%;
+    width: 80%;
 
     object-fit: contain;
 }
@@ -192,20 +193,6 @@ body {
     width: 100%;
     padding-bottom: var(--defaultTableviewSectionGap);
 }
-.tableview > .section > header, 
-.tableview > .section > footer {
-    height: max-content;
-    width: 100%;
-
-    padding-left: 12.9px;
-    padding-right: var(--elementSideMargin);
-    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box;         /* Opera/IE 8+ */
-
-    color: var(--secondaryTextColour);
-    font-size: var(--tableviewHeaderFooterFontSize);
-}
 .tableview > .section > .row { /*This is just a default div, the developer should be able to customise this if needed */
     height: var(--defaultTableviewCellHeight);
     width: 100%;
@@ -229,6 +216,27 @@ body {
 .tableview > .section > .row:last-of-type {
     border-bottom: var(--systemBorder);
 }
+.tableview > .section > header, 
+.tableview > .section > footer {
+    height: max-content;
+    width: 100%;
+
+    padding-left: 16px;
+    padding-right: var(--elementSideMargin);
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+
+    color: var(--secondaryTextColour);
+    font-size: var(--tableviewHeaderFooterFontSize);
+}
+.tableview > .section > header {
+    margin-bottom: 5px;
+}
+.tableview > .section > footer {
+    margin-top: 5px;
+}
+
 
 
 .collectionview {

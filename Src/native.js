@@ -18,7 +18,7 @@ const LoadDarkMode = () => {
     body.style.setProperty('--systemHighlightBackgroundColour', 'rgb(50, 50, 50)');
     body.style.setProperty('--navigationTabBarBackgroundColour', 'rgb(18, 18, 18)');
     body.style.setProperty('--systemObjectBackgroundColour', 'rgb(21, 21, 21)');
-    body.style.setProperty('--systemBorder', '1px solid rgb(25, 25, 25)');
+    body.style.setProperty('--systemBorder', '1px solid rgb(35, 35, 35)');
 };
 let TAB_BAR_CONFIG = [];
 const InitTabBar = () => __awaiter(void 0, void 0, void 0, function* () {
