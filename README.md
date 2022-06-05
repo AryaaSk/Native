@@ -113,3 +113,8 @@ After this, you can begin to customize the main section using the elements.
 ```
 
 You can also just insert regular HTML into a div, but since it is not being styled by Native, there is a chance that it will not have a consistent style with the rest of the app
+
+There is also an experimental dark mode, the reason it is not fully finished is because there are so many different colour changes when moving to dark mode, and so it can get very confusing. To enable the dark mode you can just call this in your script:
+```javascript
+LoadDarkMode();
+```
