@@ -70,7 +70,7 @@ After this, you can begin to customize the main section using the elements.
 
 ### Label
 ```html
-<label>A Label</label> <!-- Basically the same as HTML -->
+<label class="label">A Label</label> <!-- Basically the same as HTML -->
 ```
 
 
@@ -111,3 +111,5 @@ After this, you can begin to customize the main section using the elements.
     </div>
 </div>
 ```
+
+You can also just insert regular HTML into a div, but since it is not being styled by Native, there is a chance that it will not have a consistent style with the rest of the app

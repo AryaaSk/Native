@@ -167,7 +167,7 @@ body {
     outline: none;
 }
 
-label {
+.label {
     margin-left: var(--elementSideMargin);
     margin-right: var(--elementSideMargin);
     font-size: var(--defaultTextSize);
