@@ -46,6 +46,12 @@ const InitTabBar = async () => { //uses global TAB_BAR_CONFIG variable
         tabBar.append(element);
         element.onclick = () => { location.href = item.path; }
     }
+
+    //we also want to check if the user is in fullscreen mode and add padding to the bottom
+    if( window.innerHeight == screen.height) {
+        document.body.style.setProperty('--tabBarHeight', '100px');
+        document.body.style.setProperty('--tabBarPaddingBottom', '50px');
+    }
 }
 
 

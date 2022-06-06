@@ -36,6 +36,11 @@ const InitTabBar = () => __awaiter(void 0, void 0, void 0, function* () {
         tabBar.append(element);
         element.onclick = () => { location.href = item.path; };
     }
+    //we also want to check if the user is in fullscreen mode and add padding to the bottom
+    if (window.innerHeight == screen.height) {
+        document.body.style.setProperty('--tabBarHeight', '100px');
+        document.body.style.setProperty('--tabBarPaddingBottom', '50px');
+    }
 });
 const ChangeSVGFill = (src, colourHex) => __awaiter(void 0, void 0, void 0, function* () {
     const hex = colourHex.replace("#", "");
