@@ -48,9 +48,9 @@ const InitTabBar = async () => { //uses global TAB_BAR_CONFIG variable
     }
 
     //we also want to check if the user is in fullscreen mode and add padding to the bottom
-    if( window.innerHeight == screen.height) {
-        document.body.style.setProperty('--tabBarHeight', '100px');
-        document.body.style.setProperty('--tabBarPaddingBottom', '50px');
+    if (window.matchMedia('(display-mode: fullscreen)').matches) {
+        document.body.style.setProperty('--tabBarHeight', 'calc(50px + 1.8rem)');
+        document.body.style.setProperty('--tabBarPaddingBottom', '1.8rem');
     }
 }
 
