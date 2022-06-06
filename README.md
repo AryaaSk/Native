@@ -123,3 +123,26 @@ There is also an experimental dark mode, the reason it is not fully finished is 
 ```javascript
 LoadDarkMode();
 ```
+
+## PWA
+To convert the app to a PWA, follow this guide. It was copied from [Grapher](https://github.com/aryaask/grapher), which I created to test the framework:
+- Add a logo in the Assets folder.
+- Add to the root of the Src folder, for the Icon I set the path as if they were in the same directory, because they get placed in the same dist directory after being built.
+- Added a rel tag in all the HTML files, like this:
+```html
+<link rel="manifest" href="/Src/manifest.json">
+```
+- Added these meta tags before the main meta tag, to allow the app to use all of the available area:
+```html
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+```
+
+Then just call InitTabBar() and it should auto-resize after checking if it is in PWA mode or not.
+
+## Previews
+Here is a side by side comparison with Native and an actual native iOS app:
+![Comparison](Comparison/Result.png?raw=true)
+
+You can test these 2 apps yourself, and read about the comparison in the [Comparison Folder](Comparison)
