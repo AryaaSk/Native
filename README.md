@@ -142,7 +142,7 @@ To convert the app to a PWA, follow this guide. It was copied from [Grapher](Gra
 Then just call InitTabBar() and it should auto-resize after checking if it is in PWA mode or not.
 
 ## Previews
-Here is a side by side comparison with Native and an actual native iOS app:
-![Comparison](Comparison/Result.png?raw=true)
+Here is a side by side comparison with Native and an actual native iOS app\
+You can test these 2 apps yourself, and read about the comparison in the [Comparison Folder](Comparison):
 
-You can test these 2 apps yourself, and read about the comparison in the [Comparison Folder](Comparison)
+![Comparison](Comparison/Result.png?raw=true)

@@ -5,7 +5,7 @@
 I built this to test Native, which is a CSS Framework used to make website looks like native apps.\
 I can then build the project, and upload it to a hosting service, and then just view it as a PWA or inside a WebView of a native app.
 
-## URL: https://aryaask.github.io/Grapher/dist
+## URL: https://aryaask.github.io/Native/Grapher/dist
 
 ## How to convert to PWA:
 I also added a manifest.json, to try and convert it to a PWA, it seems to work however I have not added a service worker, as I am still learning about PWAs and how they function.\
