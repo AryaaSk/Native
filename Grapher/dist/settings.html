@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Settings</title>
+
+    <link rel="stylesheet" href="native.css">
+    <script src="native.js"></script>
+    <script src="nativeConfig.js" defer></script>
+
+    <script src="settings.js" defer></script>
+    <link rel="stylesheet" href="settings.css">
+
+    <link rel="manifest" href="manifest.json">
+</head>
+<body ontouchstart>
+    <div class="navigation-bar">
+        <div class="leftButtons"></div>
+        <label>Settings</label>
+        <div class="rightButtons"></div>
+    </div>
+    
+    <div class="main" id="main">
+
+        <div class="tableview" id="tableview">
+            <div class="section">
+                <header>Appearance</header>
+                <div class="row" id="light">Light</div>
+                <div class="row" id="dark">Dark</div>
+            </div>
+            <div class="section" style="padding-bottom: 100vh;"></div> <!-- To give bouncy scroll effect -->
+        </div>
+
+    </div>
+    
+    <div class="tab-bar"></div>
+</body>
+</html>

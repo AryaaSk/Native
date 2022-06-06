@@ -1,0 +1,15 @@
+{
+  "name": "Grapher PWA",
+  "short_name": "Grapher",
+  "description": "An app which graphs different equations",
+  "icons": [
+    {
+      "src": "Icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./",
+  "scope": ".",
+  "display": "fullscreen"
+}

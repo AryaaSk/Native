@@ -125,7 +125,7 @@ LoadDarkMode();
 ```
 
 ## PWA
-To convert the app to a PWA, follow this guide. It was copied from [Grapher](https://github.com/aryaask/grapher), which I created to test the framework:
+To convert the app to a PWA, follow this guide. It was copied from [Grapher](Grapher), which I created to test the framework:
 - Add a logo in the Assets folder.
 - Add to the root of the Src folder, for the Icon I set the path as if they were in the same directory, because they get placed in the same dist directory after being built.
 - Added a rel tag in all the HTML files, like this:

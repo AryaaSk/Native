@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Grapher</title>
+
+    <link rel="stylesheet" href="native.css">
+    <script src="native.js"></script>
+    <script src="nativeConfig.js" defer></script>
+
+    <script src="canvasUtilites.js"></script>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="main.css">
+
+    <link rel="manifest" href="manifest.json">
+</head>
+<body ontouchstart>
+    <div class="navigation-bar">
+        <div class="leftButtons"></div>
+        <label>Grapher</label>
+        <div class="rightButtons"></div>
+    </div>
+    
+    <div class="main" id="main"> <!-- Empty divs are buffer divs (to create breaks) -->
+        <div></div>
+        
+        <input type="text" class="textfield" id="equationTextfield" placeholder="Equation">
+        <div></div>
+
+        <button class="button" id="plotGraph">Plot Graph</button>
+        <div></div>
+
+        <div id="graphWrapper">
+            <canvas id="graph"></canvas>
+        </div>
+        <div></div>
+
+    </div>
+    
+    <div class="tab-bar"></div>
+</body>
+</html>
