@@ -1,4 +1,4 @@
-# Comparision
+# Comparison
 
 ### I will create an actual Native iOS application (in xcode), and then recreate it using this library.
 
